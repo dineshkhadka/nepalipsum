@@ -12,42 +12,40 @@ var $el = $('#here');
 var helpers = {
   getRandom: function (min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
-  },
+  }
 
 }
 
 var NepalIpsum = {
 
 
-  generate: function (words, amount) {
+  generate: function (words, amount, fullStop = true) {
     var lastIndex;
     var word;
+    var addStop;
+    var isLast;
     var sentence = [];
 
     for (var i = 0; i < amount; i++) {
-      word = words[helpers.getRandom(0,words.length - 1)];
 
-      // Add Punctuation to the word
-      // 1 out of 70 chance of a full stop
-      if (helpers.getRandom(0, 70) == 1 && i != (amount - 1)){
-        word  = word + ' । ';
+
+      word = words[helpers.getRandom(0, words.length - 1)];
+
+      if (fullStop){
+        addStop = (helpers.getRandom(0, 20) == 1 && i != (amount - 1));
+        isLast =  (i == (amount - 1));
+
+        addStop || isLast ? word = word + ' ।': '';
       }
 
-      // Add a full stop to the last sentence
-      else if (i == (amount - 1)) {
-        word  = word + ' ।';
-      }
 
-      // Push the word to the `sentence` array
       sentence[lastIndex - 1] != word ? lastIndex = sentence.push(word): '' ;
     }
 
     // Join the array to create a readable sentence
     return sentence.join(' ');
-
-
-
+  }
 }
-}
-console.log(NepalIpsum.generate(crime, 50))
+console.log(NepalIpsum.generate(crime, 3, false))
+
 $el.html(NepalIpsum.generate(crime, 50))
