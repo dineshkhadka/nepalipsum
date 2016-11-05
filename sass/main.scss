@@ -1,0 +1,77 @@
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+* {
+	box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+body{
+  font-family: 'Noto Sans', sans-serif;
+  font-weight: 400;
+  font-size: 1em;
+  color: #404040;
+  padding: 0;
+  margin: 0;
+}
+
+.header {
+	width: 100%;
+	height: 15.625rem;
+	// background-color: #4aa7fa;
+
+
+	background: #de6161; /* fallback for old browsers */
+	background: -webkit-linear-gradient(to left, #de6161 , #2657eb); /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(35deg, #de6161 , #2657eb); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        
+	text-align: center;
+	color: #fff;
+	font-size: 4rem;
+	line-height: 15.625rem;
+}
+.ipsum-title {
+	padding-top: 3.1rem;
+
+	text-align: center;
+	.heading {
+		font-weight: 700;
+		font-size: 1.8rem;
+		color: #404040;
+	}
+	.sub-heading {
+		margin-top: 0.7rem;
+		font-size: 0.9rem;
+		font-weight: 400;
+	}
+}
+.container {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+.ipsum-content {
+	color: lighten(#404040, 20%);
+
+  	max-width: 67rem;
+	height: 100%;
+	margin: 4.75rem auto;
+	// padding-left: 9rem;
+	// padding-right: 9rem;
+	font-size: 1.1rem;
+	line-height: 1.7;
+}
+
+footer{
+	color: #fff;
+	text-align: center;
+	background-color: #eb9378;
+	padding-top: 3rem;
+	padding-bottom: 3rem;
+}
+
+@import "icomoon-font";
+@import "wenk.min";
